@@ -1,0 +1,2 @@
+Macbookpro.glb filter=lfs diff=lfs merge=lfs -text
+Macbookpro2.glb filter=lfs diff=lfs merge=lfs -text
