@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9461ee38-48b3-48a1-9d1a-8453cd098107" name="Changes" comment="First Commit." />
+    <list default="true" id="9461ee38-48b3-48a1-9d1a-8453cd098107" name="Changes" comment="Add Macbookpro.glb and Macbookpro2.glb">
+      <change afterPath="$PROJECT_DIR$/src/views/Detail.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/List.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -43,7 +59,16 @@
       <workItem from="1657174889817" duration="74000" />
       <workItem from="1657175110020" duration="2773000" />
       <workItem from="1657178104910" duration="298000" />
+      <workItem from="1657241832137" duration="25027000" />
     </task>
+    <task id="LOCAL-00001" summary="Add Macbookpro.glb and Macbookpro2.glb">
+      <created>1657185062583</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1657185062583</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -62,6 +87,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First Commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="First Commit." />
+    <MESSAGE value="Add Macbookpro.glb and Macbookpro2.glb" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Macbookpro.glb and Macbookpro2.glb" />
   </component>
 </project>

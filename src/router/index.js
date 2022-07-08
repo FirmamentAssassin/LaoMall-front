@@ -24,6 +24,16 @@ const routes = [
     component: () => import("../views/Scene.vue"),
     name: "scene",
   },
+  {
+    path: "/list",
+    component: () => import("../views/List.vue"),
+    name: "list",
+  },
+  {
+    path: "/detail",
+    component: () => import("../views/Detail.vue"),
+    name: "detail",
+  },
 ];
 
 // 3. 创建路由实例并传递 `routes` 配置
