@@ -30,7 +30,7 @@ const routes = [
     name: "list",
   },
   {
-    path: "/detail",
+    path: "/detail/:productId",
     component: () => import("../views/Detail.vue"),
     name: "detail",
   },

@@ -1,7 +1,7 @@
 <template>
   <div class="header" :class="{ hidden: store.state.isFullscreen }">
     <div class="logo" @click="router.push('/')">
-      <img src="../assets/img/logo_rect.jpg" alt="logo" />
+      <img src="" alt="logo" />
     </div>
     <a-input-search
       v-model:value="data.value"
@@ -16,18 +16,21 @@
         </template>
         帮助
       </a-menu-item>
-      <a-menu-item key="salesroom">
+      <a-menu-item key="salesroom" >
         <template #icon>
-          <ShopOutlined />
+          <ShoppingOutlined />
         </template>
-        门店
+          全部商品
+        <router-link to="/list">
+
+        </router-link>
       </a-menu-item>
-      <a-sub-menu key="account">
+      <a-menu-item key="account">
         <template #icon>
           <UserOutlined />
         </template>
-        <template #title>账户</template>
-      </a-sub-menu>
+        账户
+      </a-menu-item>
       <a-sub-menu key="buycart">
         <template #icon>
           <CarOutlined />
@@ -79,7 +82,7 @@ import { useRoute, useRouter } from "vue-router";
 import { useStore } from "vuex";
 import { reactive } from "vue";
 import {
-  ShopOutlined,
+  ShoppingOutlined,
   UserOutlined,
   CarOutlined,
   QuestionCircleOutlined,

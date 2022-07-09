@@ -8,13 +8,13 @@
             <div class="large" v-show="isShow"
                  :style="[{backgroundImage:`url(${imgUrl})`}, bgPosition]"></div>
             <div class="middle" ref="target">
-              <el-image :src="imgUrl" fit="fill"></el-image>
+              <el-image :src="imgUrl" fit="fill" style="height: 100%; width: 100%"></el-image>
               <div class="layer" v-show="isShow" :style="[position]"></div>
             </div>
           </div>
         </el-col>
         <div class="goods-info">
-          <el-col :span="20">
+          <el-col :span="18">
             <div class="goods-name" style="font-size: large; font-weight: bold">
               {{ name }}
             </div>
@@ -46,7 +46,7 @@
 <script>
 import {reactive, ref, watch} from 'vue'
 import {useMouseInElement} from '@vueuse/core'
-import axios from "axios";
+import axios from "axios"
 
 export default {
   name: 'GoodsImage',
@@ -54,7 +54,7 @@ export default {
     images: {
       type: Array,
       default: () => []
-    }
+    },
   },
   data() {
     return {
@@ -71,15 +71,16 @@ export default {
   },
   methods: {
     getData: function () {
-      let that = this;
-      axios.get("http://1.116.147.57:8080/product/3000").then(function (response) {
+      let _this = this;
+      let productId = this.$route.params.productId;
+      axios.get(`http://1.116.147.57:8080/product/${productId}`).then(function (response) {
             console.log(response.data);
-            that.name = response.data.data.name;
-            that.detail = response.data.data.detail;
-            that.price = response.data.data.price;
-            that.imgUrl = response.data.data.imgUrl;
-            that.inventory = response.data.data.inventory;
-            that.sales = response.data.data.sales;
+            _this.name = response.data.data.name;
+            _this.detail = response.data.data.detail;
+            _this.price = response.data.data.price;
+            _this.imgUrl = response.data.data.imgUrl;
+            _this.inventory = response.data.data.inventory;
+            _this.sales = response.data.data.sales;
           },
           function (err) {
             console.log(err)
