@@ -26,7 +26,7 @@
           </div>
           <el-footer>
             <div class="block" style="align-content: center">
-              <el-pagination layout="prev, pager, next" :total="100" :page-size="20"/>
+              <el-pagination layout="prev, pager, next" :total="250" :page-size="20" @current-change="handlePageChange"/>
             </div>
           </el-footer>
         </el-scrollbar>
@@ -58,12 +58,12 @@
           </div>
           <el-footer>
             <div class="block" style="align-content: center">
-              <el-pagination layout="prev, pager, next" :total="100" :page-size="20"/>
+              <el-pagination layout="prev, pager, next" :total="250" :page-size="20" @current-change="handlePageChange"/>
             </div>
           </el-footer>
         </el-scrollbar>
       </div>
-    </el-tab-pane>
+    </el-tab-pane >
     <el-tab-pane label="百货" :name="9" @click="">
       <div class="block">
         <el-scrollbar height="100%">
@@ -89,7 +89,7 @@
           </div>
           <el-footer>
             <div class="block" style="align-content: center">
-              <el-pagination layout="prev, pager, next" :total="100" :page-size="20"/>
+              <el-pagination layout="prev, pager, next" :total="250" :page-size="20" @current-change="handlePageChange"/>
             </div>
           </el-footer>
         </el-scrollbar>
@@ -120,7 +120,7 @@
           </div>
           <el-footer>
             <div class="block" style="align-content: center">
-              <el-pagination layout="prev, pager, next" :total="100" :page-size="20"/>
+              <el-pagination layout="prev, pager, next" :total="250" :page-size="20" @current-change="handlePageChange"/>
             </div>
           </el-footer>
         </el-scrollbar>
@@ -151,7 +151,7 @@
           </div>
           <el-footer>
             <div class="block" style="align-content: center">
-              <el-pagination layout="prev, pager, next" :total="100" :page-size="20"/>
+              <el-pagination layout="prev, pager, next" :total="250" :page-size="20" @current-change="handlePageChange"/>
             </div>
           </el-footer>
         </el-scrollbar>
@@ -182,7 +182,7 @@
           </div>
           <el-footer>
             <div class="block" style="align-content: center">
-              <el-pagination layout="prev, pager, next" :total="100" :page-size="20"/>
+              <el-pagination layout="prev, pager, next" :total="250" :page-size="20" @current-change="handlePageChange"/>
             </div>
           </el-footer>
         </el-scrollbar>
@@ -213,7 +213,7 @@
           </div>
           <el-footer>
             <div class="block" style="align-content: center">
-              <el-pagination layout="prev, pager, next" :total="100" :page-size="20"/>
+              <el-pagination layout="prev, pager, next" :total="250" :page-size="20" @current-change="handlePageChange"/>
             </div>
           </el-footer>
         </el-scrollbar>
@@ -244,7 +244,7 @@
           </div>
           <el-footer>
             <div class="block" style="align-content: center">
-              <el-pagination layout="prev, pager, next" :total="100" :page-size="20"/>
+              <el-pagination layout="prev, pager, next" :total="250" :page-size="20" @current-change="handlePageChange"/>
             </div>
           </el-footer>
         </el-scrollbar>
@@ -292,7 +292,12 @@ export default {
     },
     handleChange: function (tabName) {
       this.getCategoryData(tabName)
-    }
+    },
+    handlePageChange: function (val) {
+      this.getCategoryData(editableTabName.value, val)
+      // to top
+      document.body.scrollTop = document.documentElement.scrollTop = 0;
+    },
   }
 }
 </script>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9461ee38-48b3-48a1-9d1a-8453cd098107" name="Changes" comment="First Commit.">
+    <list default="true" id="9461ee38-48b3-48a1-9d1a-8453cd098107" name="Changes" comment="switch tab">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/List.vue" afterDir="false" />
     </list>
@@ -47,6 +47,14 @@
       <workItem from="1657175110020" duration="2773000" />
       <workItem from="1657178104910" duration="298000" />
     </task>
+    <task id="LOCAL-00001" summary="switch tab">
+      <created>1657358536483</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1657358536483</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -65,6 +73,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First Commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="First Commit." />
+    <MESSAGE value="switch tab" />
+    <option name="LAST_COMMIT_MESSAGE" value="switch tab" />
   </component>
 </project>
