@@ -5,7 +5,7 @@
       <div class="block">
         <el-scrollbar height="100%">
           <div class="product-wrapper">
-            <li v-for="product in data" :key="product">
+            <el-card v-for="product in data" :key="product" :body-style="{ padding: '0px', margin: '0 40px' }">
               <div class="product">
                 <div class="product-img">
                   <img :src="product.imgUrl" alt=""
@@ -22,7 +22,7 @@
                   <span>近期销量：{{ product.sales }}</span>
                 </div>
               </div>
-            </li>
+            </el-card>
           </div>
           <el-footer>
             <div class="block" style="align-content: center">
@@ -37,7 +37,7 @@
       <div class="block">
         <el-scrollbar height="100%">
           <div class="product-wrapper">
-            <li v-for="product in data" :key="product">
+            <el-card v-for="product in data" :key="product" :body-style="{ padding: '0px', margin: '0 40px' }">
               <div class="product">
                 <div class="product-img">
                   <img :src="product.imgUrl" alt=""
@@ -54,7 +54,7 @@
                   <span>近期销量：{{ product.sales }}</span>
                 </div>
               </div>
-            </li>
+            </el-card>
           </div>
           <el-footer>
             <div class="block" style="align-content: center">
@@ -68,7 +68,7 @@
       <div class="block">
         <el-scrollbar height="100%">
           <div class="product-wrapper">
-            <li v-for="product in data" :key="product">
+            <el-card v-for="product in data" :key="product" :body-style="{ padding: '0px', margin: '0 40px' }">
               <div class="product">
                 <div class="product-img">
                   <img :src="product.imgUrl" alt=""
@@ -85,7 +85,7 @@
                   <span>近期销量：{{ product.sales }}</span>
                 </div>
               </div>
-            </li>
+            </el-card>
           </div>
           <el-footer>
             <div class="block" style="align-content: center">
@@ -99,7 +99,7 @@
       <div class="block">
         <el-scrollbar height="100%">
           <div class="product-wrapper">
-            <li v-for="product in data" :key="product">
+            <el-card v-for="product in data" :key="product" :body-style="{ padding: '0px', margin: '0 40px' }">
               <div class="product">
                 <div class="product-img">
                   <img :src="product.imgUrl" alt=""
@@ -116,7 +116,7 @@
                   <span>近期销量：{{ product.sales }}</span>
                 </div>
               </div>
-            </li>
+            </el-card>
           </div>
           <el-footer>
             <div class="block" style="align-content: center">
@@ -130,7 +130,7 @@
       <div class="block">
         <el-scrollbar height="100%">
           <div class="product-wrapper">
-            <li v-for="product in data" :key="product">
+            <el-card v-for="product in data" :key="product" :body-style="{ padding: '0px', margin: '0 40px' }">
               <div class="product">
                 <div class="product-img">
                   <img :src="product.imgUrl" alt=""
@@ -147,7 +147,7 @@
                   <span>近期销量：{{ product.sales }}</span>
                 </div>
               </div>
-            </li>
+            </el-card>
           </div>
           <el-footer>
             <div class="block" style="align-content: center">
@@ -161,7 +161,7 @@
       <div class="block">
         <el-scrollbar height="100%">
           <div class="product-wrapper">
-            <li v-for="product in data" :key="product">
+            <el-card v-for="product in data" :key="product" :body-style="{ padding: '0px', margin: '0 40px' }">
               <div class="product">
                 <div class="product-img">
                   <img :src="product.imgUrl" alt=""
@@ -178,7 +178,7 @@
                   <span>近期销量：{{ product.sales }}</span>
                 </div>
               </div>
-            </li>
+            </el-card>
           </div>
           <el-footer>
             <div class="block" style="align-content: center">
@@ -192,7 +192,7 @@
       <div class="block">
         <el-scrollbar height="100%">
           <div class="product-wrapper">
-            <li v-for="product in data" :key="product">
+            <el-card v-for="product in data" :key="product" :body-style="{ padding: '0px', margin: '0 40px' }">
               <div class="product">
                 <div class="product-img">
                   <img :src="product.imgUrl" alt=""
@@ -209,7 +209,7 @@
                   <span>近期销量：{{ product.sales }}</span>
                 </div>
               </div>
-            </li>
+            </el-card>
           </div>
           <el-footer>
             <div class="block" style="align-content: center">
@@ -223,7 +223,7 @@
       <div class="block">
         <el-scrollbar height="100%">
           <div class="product-wrapper">
-            <li v-for="product in data" :key="product">
+            <el-card v-for="product in data" :key="product" :body-style="{ padding: '0px', margin: '0 40px' }">
               <div class="product">
                 <div class="product-img">
                   <img :src="product.imgUrl" alt=""
@@ -240,7 +240,7 @@
                   <span>近期销量：{{ product.sales }}</span>
                 </div>
               </div>
-            </li>
+            </el-card>
           </div>
           <el-footer>
             <div class="block" style="align-content: center">
@@ -311,21 +311,20 @@ export default {
   width: 100%;
   align-content: center;
   min-width: 900px;
-  max-width: 1200px;
+  max-width: 1500px;
 }
 
 .product-wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-
+  gap: 40px;
   margin: 0 auto;
 }
 
 .product {
-  margin: 0 40px;
   width: 220px;
-  height: 500px;
+  height: 430px;
 }
 
 .product-img {
@@ -338,6 +337,7 @@ export default {
 .product-price {
   font-size: large;
   color: #ff5a5f;
+  display: inline;
 }
 
 .product-price span {
@@ -352,11 +352,18 @@ export default {
   color: #000000;
   text-overflow: ellipsis;
   width: 220px;
+  overflow:hidden;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
 }
 
 .product-sales {
   font-size: small;
   color: gray;
+  display: inline;
+  float: right;
+  margin-top: 10px;
 }
 
 li {
