@@ -1,18 +1,20 @@
 <template>
   <el-header></el-header>
-  <el-tabs :tab-position="'left'" style="height: 100%" class="demo-tabs">
-    <el-tab-pane label="服装" @click="getCategoryData(7)">
+  <el-tabs :tab-position="'left'" style="height: 100%" class="demo-tabs" @tab-change="handleChange" v-model="editableTabName">
+    <el-tab-pane label="服装" :name="7" @click="">
       <div class="block">
         <el-scrollbar height="100%">
           <div class="product-wrapper">
             <li v-for="product in data" :key="product">
               <div class="product">
-                  <div class="product-img">
-                    <img :src="product.imgUrl" alt="" @click="$router.push({name: 'detail', params: {productId: product.productId}})"/>
-                  </div>
-                  <div class="product-name" @click="$router.push({name: 'detail', params: {productId: product.productId}})">
-                    <span>{{ product.name }}</span>
-                  </div>
+                <div class="product-img">
+                  <img :src="product.imgUrl" alt=""
+                       @click="$router.push({name: 'detail', params: {productId: product.productId}})"/>
+                </div>
+                <div class="product-name"
+                     @click="$router.push({name: 'detail', params: {productId: product.productId}})">
+                  <span>{{ product.name }}</span>
+                </div>
                 <div class="product-price">
                   <span>￥{{ product.price }}</span>
                 </div>
@@ -31,16 +33,18 @@
       </div>
 
     </el-tab-pane>
-    <el-tab-pane label="食品" @click="getCategoryData(8)">
+    <el-tab-pane label="食品" :name="8" @click="">
       <div class="block">
         <el-scrollbar height="100%">
           <div class="product-wrapper">
             <li v-for="product in data" :key="product">
               <div class="product">
                 <div class="product-img">
-                  <img :src="product.imgUrl" alt="" @click="$router.push({name: 'detail', params: {productId: product.productId}})"/>
+                  <img :src="product.imgUrl" alt=""
+                       @click="$router.push({name: 'detail', params: {productId: product.productId}})"/>
                 </div>
-                <div class="product-name" @click="$router.push({name: 'detail', params: {productId: product.productId}})">
+                <div class="product-name"
+                     @click="$router.push({name: 'detail', params: {productId: product.productId}})">
                   <span>{{ product.name }}</span>
                 </div>
                 <div class="product-price">
@@ -60,16 +64,18 @@
         </el-scrollbar>
       </div>
     </el-tab-pane>
-    <el-tab-pane label="百货" @click="getCategoryData(9)">
+    <el-tab-pane label="百货" :name="9" @click="">
       <div class="block">
         <el-scrollbar height="100%">
           <div class="product-wrapper">
             <li v-for="product in data" :key="product">
               <div class="product">
                 <div class="product-img">
-                  <img :src="product.imgUrl" alt="" @click="$router.push({name: 'detail', params: {productId: product.productId}})"/>
+                  <img :src="product.imgUrl" alt=""
+                       @click="$router.push({name: 'detail', params: {productId: product.productId}})"/>
                 </div>
-                <div class="product-name" @click="$router.push({name: 'detail', params: {productId: product.productId}})">
+                <div class="product-name"
+                     @click="$router.push({name: 'detail', params: {productId: product.productId}})">
                   <span>{{ product.name }}</span>
                 </div>
                 <div class="product-price">
@@ -89,16 +95,18 @@
         </el-scrollbar>
       </div>
     </el-tab-pane>
-    <el-tab-pane label="数码" @click="getCategoryData(10)">
+    <el-tab-pane label="数码" :name="10" @click="">
       <div class="block">
         <el-scrollbar height="100%">
           <div class="product-wrapper">
             <li v-for="product in data" :key="product">
               <div class="product">
                 <div class="product-img">
-                  <img :src="product.imgUrl" alt="" @click="$router.push({name: 'detail', params: {productId: product.productId}})"/>
+                  <img :src="product.imgUrl" alt=""
+                       @click="$router.push({name: 'detail', params: {productId: product.productId}})"/>
                 </div>
-                <div class="product-name" @click="$router.push({name: 'detail', params: {productId: product.productId}})">
+                <div class="product-name"
+                     @click="$router.push({name: 'detail', params: {productId: product.productId}})">
                   <span>{{ product.name }}</span>
                 </div>
                 <div class="product-price">
@@ -118,16 +126,18 @@
         </el-scrollbar>
       </div>
     </el-tab-pane>
-    <el-tab-pane label="电器" @click="getCategoryData(11)">
+    <el-tab-pane label="电器" :name="11" @click="">
       <div class="block">
         <el-scrollbar height="100%">
           <div class="product-wrapper">
             <li v-for="product in data" :key="product">
               <div class="product">
                 <div class="product-img">
-                  <img :src="product.imgUrl" alt="" @click="$router.push({name: 'detail', params: {productId: product.productId}})"/>
+                  <img :src="product.imgUrl" alt=""
+                       @click="$router.push({name: 'detail', params: {productId: product.productId}})"/>
                 </div>
-                <div class="product-name" @click="$router.push({name: 'detail', params: {productId: product.productId}})">
+                <div class="product-name"
+                     @click="$router.push({name: 'detail', params: {productId: product.productId}})">
                   <span>{{ product.name }}</span>
                 </div>
                 <div class="product-price">
@@ -147,16 +157,18 @@
         </el-scrollbar>
       </div>
     </el-tab-pane>
-    <el-tab-pane label="生鲜" @click="getCategoryData(12)">
+    <el-tab-pane label="生鲜" :name="12" @click="">
       <div class="block">
         <el-scrollbar height="100%">
           <div class="product-wrapper">
             <li v-for="product in data" :key="product">
               <div class="product">
                 <div class="product-img">
-                  <img :src="product.imgUrl" alt="" @click="$router.push({name: 'detail', params: {productId: product.productId}})"/>
+                  <img :src="product.imgUrl" alt=""
+                       @click="$router.push({name: 'detail', params: {productId: product.productId}})"/>
                 </div>
-                <div class="product-name" @click="$router.push({name: 'detail', params: {productId: product.productId}})">
+                <div class="product-name"
+                     @click="$router.push({name: 'detail', params: {productId: product.productId}})">
                   <span>{{ product.name }}</span>
                 </div>
                 <div class="product-price">
@@ -176,16 +188,18 @@
         </el-scrollbar>
       </div>
     </el-tab-pane>
-    <el-tab-pane label="医药" @click="getCategoryData(13)">
+    <el-tab-pane label="医药" :name="13" @click="">
       <div class="block">
         <el-scrollbar height="100%">
           <div class="product-wrapper">
             <li v-for="product in data" :key="product">
               <div class="product">
                 <div class="product-img">
-                  <img :src="product.imgUrl" alt="" @click="$router.push({name: 'detail', params: {productId: product.productId}})"/>
+                  <img :src="product.imgUrl" alt=""
+                       @click="$router.push({name: 'detail', params: {productId: product.productId}})"/>
                 </div>
-                <div class="product-name" @click="$router.push({name: 'detail', params: {productId: product.productId}})">
+                <div class="product-name"
+                     @click="$router.push({name: 'detail', params: {productId: product.productId}})">
                   <span>{{ product.name }}</span>
                 </div>
                 <div class="product-price">
@@ -205,16 +219,18 @@
         </el-scrollbar>
       </div>
     </el-tab-pane>
-    <el-tab-pane label="美妆" @click="getCategoryData(14)">
+    <el-tab-pane label="美妆" :name="14" @click="">
       <div class="block">
         <el-scrollbar height="100%">
           <div class="product-wrapper">
             <li v-for="product in data" :key="product">
               <div class="product">
                 <div class="product-img">
-                  <img :src="product.imgUrl" alt="" @click="$router.push({name: 'detail', params: {productId: product.productId}})"/>
+                  <img :src="product.imgUrl" alt=""
+                       @click="$router.push({name: 'detail', params: {productId: product.productId}})"/>
                 </div>
-                <div class="product-name" @click="$router.push({name: 'detail', params: {productId: product.productId}})">
+                <div class="product-name"
+                     @click="$router.push({name: 'detail', params: {productId: product.productId}})">
                   <span>{{ product.name }}</span>
                 </div>
                 <div class="product-price">
@@ -239,7 +255,7 @@
 <script>
 import {inject, reactive, ref} from 'vue'
 import axios from 'axios'
-
+const editableTabName = ref(7)
 const pagination = reactive({
   page: 1,
   size: 20
@@ -252,17 +268,20 @@ export default {
       data: ""
     })
     return {
-      data
+      data,
+      editableTabName,
     }
   },
   mounted() {
     this.getCategoryData(7);
   },
   methods: {
-    getCategoryData: function (categoryId) {
+    getCategoryData: function (categoryId, page, size) {
+      page = (page === undefined ? 1 : page);
+      size = (size === undefined ? 20 : size);
       let _this = this;
       let index = 0;
-      axios.get(`http://1.116.147.57:8080/products/categoryId/${categoryId}`).then(function (response) {
+      axios.get(`http://1.116.147.57:8080/products/categoryId/${categoryId}?page=${page}&szie=${size}`).then(function (response) {
             console.log(response.data)
             _this.data = response.data.data
           },
@@ -270,6 +289,9 @@ export default {
             console.log(err)
           })
 
+    },
+    handleChange: function (tabName) {
+      this.getCategoryData(tabName)
     }
   }
 }
@@ -305,7 +327,7 @@ export default {
   width: 100%;
   height: 300px;
   background-color: #ffffff;
-  line-height: 50px;
+  line-height: 300px;
 }
 
 .product-price {
@@ -330,5 +352,9 @@ export default {
 .product-sales {
   font-size: small;
   color: gray;
+}
+
+li {
+  list-style: none;
 }
 </style>
