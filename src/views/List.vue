@@ -5,7 +5,7 @@
       <div class="block">
         <el-scrollbar height="100%">
           <div class="product-wrapper">
-            <el-card v-for="product in data" :key="product" :body-style="{ padding: '0px', margin: '0 40px' }">
+            <el-card v-for="product in data" :key="product" :body-style="{ padding: '0px', margin: '0 40px',cursor: 'pointer' }" shadow="hover">
               <div class="product">
                 <div class="product-img">
                   <img :src="product.imgUrl" alt=""
@@ -37,7 +37,7 @@
       <div class="block">
         <el-scrollbar height="100%">
           <div class="product-wrapper">
-            <el-card v-for="product in data" :key="product" :body-style="{ padding: '0px', margin: '0 40px' }">
+            <el-card v-for="product in data" :key="product" :body-style="{ padding: '0px', margin: '0 40px',cursor: 'pointer' }" shadow="hover">
               <div class="product">
                 <div class="product-img">
                   <img :src="product.imgUrl" alt=""
@@ -68,7 +68,7 @@
       <div class="block">
         <el-scrollbar height="100%">
           <div class="product-wrapper">
-            <el-card v-for="product in data" :key="product" :body-style="{ padding: '0px', margin: '0 40px' }">
+            <el-card v-for="product in data" :key="product" :body-style="{ padding: '0px', margin: '0 40px',cursor: 'pointer' }" shadow="hover">
               <div class="product">
                 <div class="product-img">
                   <img :src="product.imgUrl" alt=""
@@ -99,7 +99,7 @@
       <div class="block">
         <el-scrollbar height="100%">
           <div class="product-wrapper">
-            <el-card v-for="product in data" :key="product" :body-style="{ padding: '0px', margin: '0 40px' }">
+            <el-card v-for="product in data" :key="product" :body-style="{ padding: '0px', margin: '0 40px',cursor: 'pointer' }" shadow="hover">
               <div class="product">
                 <div class="product-img">
                   <img :src="product.imgUrl" alt=""
@@ -130,7 +130,7 @@
       <div class="block">
         <el-scrollbar height="100%">
           <div class="product-wrapper">
-            <el-card v-for="product in data" :key="product" :body-style="{ padding: '0px', margin: '0 40px' }">
+            <el-card v-for="product in data" :key="product" :body-style="{ padding: '0px', margin: '0 40px',cursor: 'pointer' }" shadow="hover">
               <div class="product">
                 <div class="product-img">
                   <img :src="product.imgUrl" alt=""
@@ -161,7 +161,7 @@
       <div class="block">
         <el-scrollbar height="100%">
           <div class="product-wrapper">
-            <el-card v-for="product in data" :key="product" :body-style="{ padding: '0px', margin: '0 40px' }">
+            <el-card v-for="product in data" :key="product" :body-style="{ padding: '0px', margin: '0 40px',cursor: 'pointer' }" shadow="hover">
               <div class="product">
                 <div class="product-img">
                   <img :src="product.imgUrl" alt=""
@@ -192,7 +192,7 @@
       <div class="block">
         <el-scrollbar height="100%">
           <div class="product-wrapper">
-            <el-card v-for="product in data" :key="product" :body-style="{ padding: '0px', margin: '0 40px' }">
+            <el-card v-for="product in data" :key="product" :body-style="{ padding: '0px', margin: '0 40px',cursor: 'pointer' }" shadow="hover">
               <div class="product">
                 <div class="product-img">
                   <img :src="product.imgUrl" alt=""
@@ -223,7 +223,7 @@
       <div class="block">
         <el-scrollbar height="100%">
           <div class="product-wrapper">
-            <el-card v-for="product in data" :key="product" :body-style="{ padding: '0px', margin: '0 40px' }">
+            <el-card v-for="product in data" :key="product" :body-style="{ padding: '0px', margin: '0 40px',cursor: 'pointer' }" shadow="hover">
               <div class="product">
                 <div class="product-img">
                   <img :src="product.imgUrl" alt=""
@@ -363,7 +363,7 @@ export default {
   color: gray;
   display: inline;
   float: right;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 li {
