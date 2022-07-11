@@ -45,7 +45,7 @@
 import {reactive, ref, watch} from 'vue'
 import {useMouseInElement} from '@vueuse/core'
 import axios from "axios"
-
+const quantity = ref(1)
 export default {
   name: 'GoodsImage',
   props: {
@@ -61,7 +61,8 @@ export default {
       price: 0,
       imgUrl: "",
       inventory: 0,
-      sales: 0
+      sales: 0,
+      quantity
     }
   },
   mounted() {
