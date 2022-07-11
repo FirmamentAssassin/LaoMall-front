@@ -1,46 +1,46 @@
 <template>
   <div class="header" :class="{ hidden: store.state.isFullscreen }">
     <div class="logo" @click="router.push('/')">
-      <img src="" alt="logo" />
+      <img src="" alt="logo"/>
     </div>
     <a-input-search
-      v-model:value="data.value"
-      placeholder="搜索商品或商品号"
-      class="input-search"
-      @search="onSearch"
+        v-model:value="data.value"
+        placeholder="搜索商品"
+        class="input-search"
+        @search="onSearch"
     />
     <a-menu v-model:selectedKeys="data.current" mode="horizontal">
       <a-menu-item key="help">
         <template #icon>
-          <question-circle-outlined />
+          <question-circle-outlined/>
         </template>
         帮助
       </a-menu-item>
-      <a-menu-item key="salesroom" >
+      <a-menu-item key="salesroom">
         <template #icon>
-          <ShoppingOutlined />
+          <ShoppingOutlined/>
         </template>
-          全部商品
+        全部商品
         <router-link to="/list">
 
         </router-link>
       </a-menu-item>
       <a-menu-item key="account">
         <template #icon>
-          <UserOutlined />
+          <UserOutlined/>
         </template>
         账户
       </a-menu-item>
       <a-sub-menu key="buycart">
         <template #icon>
-          <CarOutlined />
+          <CarOutlined/>
         </template>
         <template #title>购物车</template>
         <a-menu-item-group title="购物商品">
           <a-menu-item v-for="(item, i) in store.state.buycarts" :key="item.id">
             <div class="prod-item">
               <div class="left">
-                <img :src="item.imgsrc" :alt="item.title" />
+                <img :src="item.imgsrc" :alt="item.title"/>
               </div>
               <div class="middle">
                 <div class="title">{{ item.title }}</div>
@@ -48,14 +48,14 @@
                   <span class="num">数量：{{ item.num }}</span>
                   <div class="control">
                     <span
-                      class="btn"
-                      @click.stop="store.commit('addBuycartsNum', i)"
-                      >+</span
+                        class="btn"
+                        @click.stop="store.commit('addBuycartsNum', i)"
+                    >+</span
                     >
                     <span
-                      class="btn"
-                      @click.stop="store.commit('minusBuycartsNum', i)"
-                      >-</span
+                        class="btn"
+                        @click.stop="store.commit('minusBuycartsNum', i)"
+                    >-</span
                     >
                   </div>
                 </div>
@@ -78,22 +78,31 @@
 </template>
 
 <script setup>
-import { useRoute, useRouter } from "vue-router";
-import { useStore } from "vuex";
-import { reactive } from "vue";
+import {useRoute, useRouter} from "vue-router";
+import {useStore} from "vuex";
+import {reactive} from "vue";
 import {
   ShoppingOutlined,
   UserOutlined,
   CarOutlined,
   QuestionCircleOutlined,
 } from "@ant-design/icons-vue";
+
 const store = useStore();
 const router = useRouter();
 const data = reactive({
   value: "",
   current: ["help"],
 });
-const onSearch = () => {};
+const onSearch = (value) => {
+  console.log(value);
+  router.push({
+    name: "search",
+    params: {
+      keywords: value,
+    },
+  });
+};
 </script>
 
 <style lang="less" scoped>
@@ -108,16 +117,19 @@ const onSearch = () => {};
   box-shadow: 0 0 10px #ccc;
   transition: all 0.5s;
 }
+
 .header.hidden {
   transform: translate(0, -100%);
 }
 
 .logo {
   margin-right: 40px;
+
   img {
     height: 30px;
   }
 }
+
 .input-search {
   display: flex;
   flex: 1;

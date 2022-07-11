@@ -34,6 +34,11 @@ const routes = [
     component: () => import("../views/Detail.vue"),
     name: "detail",
   },
+  {
+    path: "/search",
+    component: () => import("../views/search.vue"),
+    name: "search",
+  }
 ];
 
 // 3. 创建路由实例并传递 `routes` 配置
