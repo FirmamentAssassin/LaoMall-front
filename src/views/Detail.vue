@@ -44,7 +44,8 @@
 <script>
 import {reactive, ref, watch} from 'vue'
 import {useMouseInElement} from '@vueuse/core'
-import axios from "axios"
+import axios from 'axios'
+
 const quantity = ref(1)
 export default {
   name: 'GoodsImage',
@@ -73,6 +74,23 @@ export default {
       console.log(value)
     },
     addToCart: function () {
+      if (localStorage.getItem('token')) {
+        axios.put("http://1.116.147.57:8080/cart/items",
+            [{
+              "productId": this.$route.params.productId,
+              "quantity": this.quantity
+            }],
+            {
+              headers: {Authorization: localStorage.getItem('token')}
+            }).then(function (response) {
+              console.log(response)
+            },
+            function (err) {
+              console.log(err)
+            })
+      } else {
+        console.log(1)
+      }
     },
     getData: function () {
       let _this = this;
@@ -109,7 +127,7 @@ export default {
 
     }
   },
-  setup(props) {
+  setup() {
     const currIndex = ref(0)
     // 被监听的区域
     const target = ref(null)
