@@ -1,8 +1,8 @@
 <template>
   <el-container>
     <el-header></el-header>
-    <el-main class="detail">
-      <el-row justify="center">
+    <el-main class="detail" style="width: 1500px;margin: 0 auto;">
+      <div class="detail-content">
         <div class="goods-image">
           <div class="large" v-show="isShow"
                :style="[{backgroundImage:`url(${imgUrl})`}, bgPosition]"></div>
@@ -13,10 +13,10 @@
         </div>
         <el-divider direction="vertical" style="height: 400px"></el-divider>
         <div class="goods-info">
-          <div class="goods-name" style="font-size: x-large; font-weight: bold">
+          <div class="goods-name" style="font-size: large; font-weight: bold">
             {{ name }}
           </div>
-          <div class="goods-detail" style="font-size: large; color: red">
+          <div class="goods-detail" style="font-size: medium; color: red">
             {{ detail }}
           </div>
           <br>
@@ -32,11 +32,14 @@
             销量：{{ sales }}
           </div>
           <br>
-          <el-input-number v-model="quantity" :min="1" :max="10" @change="quantityChange"/>
-          <el-divider direction="vertical" style="height: 30px"></el-divider>
-          <el-button type="primary" @click="addToCart">加入购物车</el-button>
+          <div>
+            <el-input-number v-model="quantity" :min="1" :max="10" @change="quantityChange"/>
+
+            <el-divider direction="vertical" style="height: 30px"></el-divider>
+            <el-button type="primary" @click="addToCart" style="width: 150px">加入购物车</el-button>
+          </div>
         </div>
-      </el-row>
+      </div>
     </el-main>
   </el-container>
 </template>
@@ -220,5 +223,21 @@ export default {
       position: absolute;
     }
   }
+}
+
+.detail-content {
+  margin: 0 20px;
+  //width: 100%;
+  display: flex;
+  justify-content: center;
+
+}
+
+.goods-info {
+  width: 750px;
+  margin: 0px 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 </style>
