@@ -3,40 +3,38 @@
     <el-header></el-header>
     <el-main class="detail">
       <el-row justify="center">
-        <el-col :span="6">
-          <div class="goods-image">
-            <div class="large" v-show="isShow"
-                 :style="[{backgroundImage:`url(${imgUrl})`}, bgPosition]"></div>
-            <div class="middle" ref="target">
-              <el-image :src="imgUrl" fit="fill" style="height: 100%; width: 100%"></el-image>
-              <div class="layer" v-show="isShow" :style="[position]"></div>
-            </div>
+        <div class="goods-image">
+          <div class="large" v-show="isShow"
+               :style="[{backgroundImage:`url(${imgUrl})`}, bgPosition]"></div>
+          <div class="middle" ref="target">
+            <el-image :src="imgUrl" fit="fill" style="height: 100%; width: 100%"></el-image>
+            <div class="layer" v-show="isShow" :style="[position]"></div>
           </div>
-        </el-col>
+        </div>
+        <el-divider direction="vertical" style="height: 400px"></el-divider>
         <div class="goods-info">
-          <el-col :span="18">
-            <div class="goods-name" style="font-size: large; font-weight: bold">
-              {{ name }}
-            </div>
-            <div class="goods-detail" style="color: red">
-              {{ detail }}
-            </div>
-            <br>
-            <div class="goods-inventory">
-              库存：{{ inventory }}
-            </div>
-            <br>
-            <div class="goods-sales" style="color: gray">
-              销量：{{ sales }}
-            </div>
-            <br>
-            <div class="goods-price" style="font-size: x-large; font-weight: bold; color: red">
-              ¥{{ price }}
-            </div>
-            <br>
-            <el-button type="danger" @click="buy">立即购买</el-button>
-            <el-button type="primary" @click="addToCart">加入购物车</el-button>
-          </el-col>
+          <div class="goods-name" style="font-size: x-large; font-weight: bold">
+            {{ name }}
+          </div>
+          <div class="goods-detail" style="font-size: large; color: red">
+            {{ detail }}
+          </div>
+          <br>
+          <div class="goods-price" style="font-size: x-large; font-weight: bold; color: red">
+            ¥{{ price }}
+          </div>
+          <br>
+          <div class="goods-inventory" style="font-size: large; color: blue">
+            库存：{{ inventory }}
+          </div>
+          <br>
+          <div class="goods-sales" style="font-size: larger; color: gray">
+            销量：{{ sales }}
+          </div>
+          <br>
+          <el-input-number v-model="quantity" :min="1" :max="10" @change="quantityChange"/>
+          <el-divider direction="vertical" style="height: 30px"></el-divider>
+          <el-button type="primary" @click="addToCart">加入购物车</el-button>
         </div>
       </el-row>
     </el-main>
@@ -70,21 +68,44 @@ export default {
     this.getData();
   },
   methods: {
+    quantityChange: function (value) {
+      console.log(value)
+    },
+    addToCart: function () {
+    },
     getData: function () {
       let _this = this;
       let productId = this.$route.params.productId;
-      axios.get(`http://1.116.147.57:8080/product/${productId}`).then(function (response) {
-            console.log(response.data);
-            _this.name = response.data.data.name;
-            _this.detail = response.data.data.detail;
-            _this.price = response.data.data.price;
-            _this.imgUrl = response.data.data.imgUrl;
-            _this.inventory = response.data.data.inventory;
-            _this.sales = response.data.data.sales;
-          },
-          function (err) {
-            console.log(err)
-          })
+      if (localStorage.getItem('token')) {
+        axios.get(`http://1.116.147.57:8080/product/${productId}`, {
+          headers: {Authorization: localStorage.getItem('token')}
+        }).then(function (response) {
+              console.log(response.data)
+              _this.name = response.data.data.name;
+              _this.detail = response.data.data.detail;
+              _this.price = response.data.data.price;
+              _this.imgUrl = response.data.data.imgUrl;
+              _this.inventory = response.data.data.inventory;
+              _this.sales = response.data.data.sales;
+            },
+            function (err) {
+              console.log(err)
+            })
+      } else {
+        axios.get(`http://1.116.147.57:8080/product/${productId}`).then(function (response) {
+              console.log(response.data);
+              _this.name = response.data.data.name;
+              _this.detail = response.data.data.detail;
+              _this.price = response.data.data.price;
+              _this.imgUrl = response.data.data.imgUrl;
+              _this.inventory = response.data.data.inventory;
+              _this.sales = response.data.data.sales;
+            },
+            function (err) {
+              console.log(err)
+            })
+      }
+
     }
   },
   setup(props) {

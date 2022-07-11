@@ -4,7 +4,7 @@
            v-model="editableTabName">
     <el-tab-pane label="服装" :name="7" @click="">
       <!--      sub tab-->
-      <el-tabs type="card" :tab-position="'left'" id="123" class="sub7-tabs" @tab-change="handleSubChange"
+      <el-tabs type="card" :tab-position="'top'" id="123" class="sub7-tabs" @tab-change="handleSubChange"
                v-model="editableSubTabName" stretch>
         <!--        sub tab list-->
         <el-tab-pane label="上衣" :name="'上衣'">
@@ -138,7 +138,7 @@
       </el-tabs>
     </el-tab-pane>
     <el-tab-pane label="食品" :name="8" @click="">
-      <el-tabs type="card" :tab-position="'left'" class="sub8-tabs" @tab-change="handleSubChange"
+      <el-tabs type="card" :tab-position="'top'" class="sub8-tabs" @tab-change="handleSubChange"
                v-model="editableSubTabName" stretch>
         <!--        sub tab list-->
         <el-tab-pane label="饼干" :name="'饼干'">
@@ -272,7 +272,7 @@
       </el-tabs>
     </el-tab-pane>
     <el-tab-pane label="百货" :name="9" @click="">
-      <el-tabs type="card" :tab-position="'left'" class="sub9-tabs" @tab-change=""
+      <el-tabs type="card" :tab-position="'top'" class="sub9-tabs" @tab-change=""
                v-model="editableSubTabName" stretch>
         <!--        sub tab list-->
         <el-tab-pane label="收纳" :name="'收纳'">
@@ -374,7 +374,7 @@
       </el-tabs>
     </el-tab-pane>
     <el-tab-pane label="数码" :name="10" @click="">
-      <el-tabs type="card" :tab-position="'left'" class="sub-tabs" @tab-change="handleSubChange"
+      <el-tabs type="card" :tab-position="'top'" class="sub-tabs" @tab-change="handleSubChange"
                v-model="editableSubTabName" stretch>
         <!--        sub tab list-->
         <el-tab-pane label="相机" :name="'相机'">
@@ -540,7 +540,7 @@
       </el-tabs>
     </el-tab-pane>
     <el-tab-pane label="电器" :name="11" @click="">
-      <el-tabs type="card" :tab-position="'left'" class="sub-tabs" @tab-change="handleSubChange"
+      <el-tabs type="card" :tab-position="'top'" class="sub-tabs" @tab-change="handleSubChange"
                v-model="editableSubTabName" stretch>
         <!--        sub tab list-->
         <el-tab-pane label="冰箱" :name="'冰箱'">
@@ -674,7 +674,7 @@
       </el-tabs>
     </el-tab-pane>
     <el-tab-pane label="生鲜" :name="12" @click="">
-      <el-tabs type="card" :tab-position="'left'" class="sub-tabs" @tab-change="handleSubChange"
+      <el-tabs type="card" :tab-position="'top'" class="sub-tabs" @tab-change="handleSubChange"
                v-model="editableSubTabName" stretch>
         <!--        sub tab list-->
         <el-tab-pane label="水果" :name="'水果'">
@@ -808,7 +808,7 @@
       </el-tabs>
     </el-tab-pane>
     <el-tab-pane label="医药" :name="13" @click="">
-      <el-tabs type="card" :tab-position="'left'" class="sub-tabs" @tab-change="handleSubChange"
+      <el-tabs type="card" :tab-position="'top'" class="sub-tabs" @tab-change="handleSubChange"
                v-model="editableSubTabName" stretch>
         <!--        sub tab list-->
         <el-tab-pane label="急救箱" :name="'急救箱'">
@@ -910,7 +910,7 @@
       </el-tabs>
     </el-tab-pane>
     <el-tab-pane label="美妆" :name="14" @click="">
-      <el-tabs type="card" :tab-position="'left'" class="sub-tabs" @tab-change="handleSubChange"
+      <el-tabs type="card" :tab-position="'top'" class="sub-tabs" @tab-change="handleSubChange"
                v-model="editableSubTabName" stretch>
         <!--        sub tab list-->
         <el-tab-pane label="口红" :name="'口红'">
