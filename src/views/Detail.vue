@@ -48,6 +48,7 @@
 import {reactive, ref, watch} from 'vue'
 import {useMouseInElement} from '@vueuse/core'
 import axios from 'axios'
+import {ElMessage, ElMessageBox} from "element-plus"
 
 const quantity = ref(1)
 export default {
@@ -66,7 +67,7 @@ export default {
       imgUrl: "",
       inventory: 0,
       sales: 0,
-      quantity
+      quantity: 0
     }
   },
   mounted() {
@@ -87,12 +88,26 @@ export default {
               headers: {Authorization: localStorage.getItem('token')}
             }).then(function (response) {
               console.log(response)
+              ElMessage({
+                message: '添加成功',
+                type: 'success',
+                offset: 50,
+                showClose: true,
+                duration: 3
+              })
             },
             function (err) {
               console.log(err)
             })
       } else {
-        console.log(1)
+        ElMessageBox.alert('您尚未登录，是否跳转到登录界面？', '添加失败', {
+          showCancelButton: true,
+          confirmButtonText: '确认',
+          cancelButtonText: '取消',
+        }).then(() => {
+          this.$router.push('/list')
+        }).catch(() => {
+        })
       }
     },
     getData: function () {
